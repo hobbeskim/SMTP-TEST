@@ -14,11 +14,11 @@ port="587"
 #htmlFilename=""
 
 senderAddr="bookinpeople@gmail.com"
-recipientAddr = "gowoonvv@hanmail.net"
+recipientAddr = "hobbes1520@gmail.com"
 
 msg = MIMEBase("multipart","alternative")
 msg = MIMEText("this is auto mailing test.")
-msg['subject'] = "照括ぞぞぞぞぞぞぞぞぞぞ"
+msg['subject'] = "Hello,good day!"
 msg['from'] = senderAddr
 msg['to'] = recipientAddr
 
@@ -29,7 +29,7 @@ msg['to'] = recipientAddr
 
 #attach to MIMEBase
 #msg.attach(HtmlPart)
-
+#engunslejot
 #sending mail
 s = smtplib.SMTP(host,port)
 s.ehlo()
