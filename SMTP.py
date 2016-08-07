@@ -29,7 +29,8 @@ msg['to'] = recipientAddr
 
 #attach to MIMEBase
 #msg.attach(HtmlPart)
-#ho-tandimsleepy!!!!
+#god tham crazy git
+#fuckkkkkkkk!!!
 #sending mail
 s = smtplib.SMTP(host,port)
 s.ehlo()
