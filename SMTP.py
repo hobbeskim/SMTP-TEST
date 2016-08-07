@@ -18,7 +18,7 @@ recipientAddr = "hobbes1520@gmail.com"
 
 msg = MIMEBase("multipart","alternative")
 msg = MIMEText("this is auto mailing test.")
-msg['subject'] = "Hello,good day!"
+msg['subject'] = "now i'm debugging2"
 msg['from'] = senderAddr
 msg['to'] = recipientAddr
 
@@ -37,5 +37,10 @@ s.ehlo()
 s.starttls()
 s.ehlo()
 s.login("bookinpeople@gmail.com","book160218")
+i = 0
+
+## this is real
+#while i<2:
 s.sendmail(senderAddr, [recipientAddr], msg.as_string())
+#   i=i+1
 s.close()
