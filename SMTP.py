@@ -5,7 +5,7 @@ import smtplib
 
 from email.mime.base import MIMEBase
 from email.mime.text import MIMEText
-
+from datetime import datetime
 
 #global value
 
@@ -29,18 +29,23 @@ msg['to'] = recipientAddr
 
 #attach to MIMEBase
 #msg.attach(HtmlPart)
-#god tham crazy git
-#fuckkkkkkkk!!!
+
 #sending mail
+min=input('please tell me want min:')
+
+RSV=datetime(2016,8,14,23,int(min),0)
+CurS=0
+
 s = smtplib.SMTP(host,port)
 s.ehlo()
 s.starttls()
 s.ehlo()
-s.login("bookinpeople@gmail.com","book160218")
-i = 0
-
-## this is real
-#while i<2:
-s.sendmail(senderAddr, [recipientAddr], msg.as_string())
-#   i=i+1
-s.close()
+s.login("bookinpeople@gmail.com", "book160218")
+while CurS==0:
+    if((RSV.day==datetime.now().day)&(RSV.hour==datetime.now().hour)&(RSV.minute==datetime.now().minute)&(RSV.second==datetime.now().second)):
+        s.sendmail(senderAddr, [recipientAddr], msg.as_string())
+        print("i'm send the mail. thank you")
+        s.close()
+        CurS=1
+    else:
+        pass
